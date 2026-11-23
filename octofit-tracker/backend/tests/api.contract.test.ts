@@ -28,6 +28,7 @@ async function createUserAndTeam(name: string, email: string, mascot: string, te
 }
 
 describe('OctoFit API contract', () => {
+  // Test the OctoFit API contract for activities and teams
   it('creates and lists valid activities while rejecting invalid input', async () => {
     const { user, team } = await createUserAndTeam('Mona', 'mona@example.com', 'Mona');
     const invalid = await request(app).post('/api/activities').send({});
